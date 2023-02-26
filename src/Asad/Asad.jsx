@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from "react-router-dom"
+import { useState } from 'react';
 import "./Asad.css";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import imgasadour from "./ourwork.png"
@@ -7,21 +9,23 @@ import testiel from "./testiel.png";
 import manthink from "./manthink.png";
 import asadlogofoot from "./asadlogofoot.png"
 function Asad(props) {
-   
+   let [qiym, setQiym] = useState("");
     return (
         <div>
-            <section className="asad-1">
+            <section className="asad-1 mt-5">
                 <div className="container container-fluid">
                     <h2 className="text-danger mt-5">OUR WORK</h2>
                     <h1 className="mt-4 mb-5">See Our Recent Case Studies</h1>
                     <nav className='d-flex justify-content-between'>
                         <ul className='d-flex w-800 justify-content-betweeen'>
-                          <li><a href="#" className="asad-nav-link  ">UI/UX</a></li>
-                          <li><a href="#" className="asad-nav-link ">Development</a></li>
-                          <li><a href="#" className="asad-nav-link  ">Graphic Design</a></li>
-                          <li><a href="#" className="asad-nav-link ">Motion</a></li>
-                          <li><a href="#" className="asad-nav-link  ">Branding</a></li>
-                          <li><a href="#" className="asad-nav-link  ">Business Development</a></li>
+                          <li><Link to="/" className="asad-nav-link  ">UI/UX</Link></li>
+                          <li><Link to="/" className="asad-nav-link  ">Development</Link></li>
+                          <li><Link to="/" className="asad-nav-link  ">Graphic Design</Link></li>
+                          <li><Link to="/" className="asad-nav-link  ">Motion</Link></li>
+                          <li><Link to="/" className="asad-nav-link  ">Branding</Link></li>
+                          <li><Link to="/" className="asad-nav-link  ">Business Development</Link></li>
+                        
+                          
                         </ul>
                         <a href="#" className="text-decoration-none text-dark">Explore all</a>
                     </nav>
@@ -99,7 +103,7 @@ function Asad(props) {
                         <div className="col-auto">
                             <p>Join a Newsletter </p>
                             <label>Your Email: </label><br />
-                            <input type="text" className='border-1 bg-white'/><br />
+                            <input type="email" onInput={evenf => setQiym(evenf.target.value)}  className='border-1 bg-white'/><br />
                             <button className='getbtngg mt-5 '>Subscribe</button>
                         </div>
                     </div>
